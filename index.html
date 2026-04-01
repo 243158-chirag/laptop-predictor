@@ -1,5 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laptop Store & Price Predictor</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>💻 Laptop Store</h1>
+<button onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+</header>
+
+<section class="predictor">
+<h2>AI Price Predictor 🤖</h2>
+
+<input type="number" id="ram" placeholder="RAM (GB)">
+<input type="number" id="storage" placeholder="Storage (GB)">
+
+<select id="processor">
+<option value="1">Intel i3</option>
+<option value="2">Intel i5</option>
+<option value="3">Intel i7</option>
+</select>
+
+<button onclick="predictPrice()">Predict Price</button>
+
+<h3 id="result"></h3>
+</section>
+
+<section class="products" id="products"></section>
+
+<div class="cart" id="cart">
+<h2>Your Cart</h2>
+<div id="cart-items"></div>
+<h3 id="total"></h3>
+<button onclick="checkout()">Checkout</button>
+</div>
+
+<script src="script.js"></script>
+
 <script>
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
+navigator.serviceWorker.register("service-worker.js");
 }
 </script>
+
+</body>
+</html>
