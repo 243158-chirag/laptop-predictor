@@ -19,20 +19,22 @@ document.getElementById("result").innerHTML =
 
 // Product list
 const products = [
-{id:1,name:"HP i5 Laptop",price:55000},
-{id:2,name:"Dell i7 Laptop",price:72000},
-{id:3,name:"Lenovo i3 Laptop",price:42000},
-{id:4,name:"Asus Gaming Laptop",price:88000}
+{id:1,name:"HP i5 Laptop",price:55000,image:"images/hp.jpg"},
+{id:2,name:"Dell i7 Laptop",price:72000,image:"images/dell.jpg"},
+{id:3,name:"Lenovo i3 Laptop",price:42000,image:"images/lenovo.jpg"},
+{id:4,name:"Asus Gaming Laptop",price:88000,image:"images/asus.jpg"}
 ];
 
 let cart = [];
 
 function loadProducts(){
 let container = document.getElementById("products");
+container.innerHTML = "";
 
 products.forEach(p=>{
 container.innerHTML += `
 <div class="card">
+<img src="${p.image}" class="product-img">
 <h3>${p.name}</h3>
 <p>₹ ${p.price}</p>
 <button onclick="addToCart(${p.id})">Add to Cart</button>
